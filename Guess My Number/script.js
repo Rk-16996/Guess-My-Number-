@@ -11,7 +11,11 @@ document.querySelector('.btncheck').addEventListener('click', function () {
   if (!guess) {
     document.querySelector('.message-in-right').textContent = '🚫 No Number!';
   } else if (guess === secretNumber) {
-    document.querySelector('.yourscore').textContent = highscore += score;
+    //document.querySelector('.yourscore').textContent = highscore += score;
+    if (score > highscore) {
+      highscore = score;
+      document.querySelector('.yourscore').textContent = highscore;
+    }
     document.querySelector('.message-in-right').textContent =
       '🎉 Correct Answer!';
     document.querySelector('body').style.backgroundColor = 'rgb(75, 187, 0)';
